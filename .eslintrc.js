@@ -24,14 +24,16 @@ module.exports = {
     semi: ['error', 'always'],
     indent: ['error', 2],
     'no-unused-vars': 'warn',
+    'react/display-name': 'off',
 
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-props-no-spreading': 'warn',
+    'react/jsx-props-no-spreading': 'off',
 
     '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/consistent-type-assertions': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/semi': ['error', 'always']
   }

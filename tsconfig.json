@@ -3,19 +3,25 @@
     "outDir": "./build/",
     "sourceMap": true,
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
+    "module": "esnext",
+    "target": "es6",
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["./src/*"],
-      "@main/*": ["./*"],
+      "@/*": ["*"],
+      "app/*": ["app/*"],
+      "shared/*": ["shared/*"],
+      "pages/*": ["pages/*"],
+      "entities/*": ["entities/*"],
+      "features/*": ["features/*"],
+      "widgets/*": ["widgets/*"]
      },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
+  "include": ["src", "webpack.config.ts"],
   "ts-node": {
     "compilerOptions": { 
       "module": "CommonJS",

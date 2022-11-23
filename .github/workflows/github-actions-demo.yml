@@ -21,7 +21,7 @@ jobs:
       - name: install modules
         run: yarn --frozen-lockfile
       - name: build project
-        run: yarn run build:dev
+        run: yarn run build:prod
       - name: launch linter checking
         run: yarn lint:ts
       - name: fixing linter errors

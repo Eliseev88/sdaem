@@ -1,0 +1,56 @@
+@import 'app/styles/vars';
+
+.auth {
+    text-align: center;
+    display: flex;
+}
+
+.title {
+    margin-bottom: 3rem;
+    @include font (2.5rem, 700, $main, 3rem);
+}
+
+.text {
+    margin-bottom: 3.5rem;
+    @include font (1.4rem, 400, $placeholder, 1.7rem);
+}
+.box {
+    display: flex;
+    justify-content: flex-start;
+    @include font (1.4rem, 400, $placeholder, 2rem);
+}
+
+.change {
+    margin-left: 5px;
+    color: $link;
+    transition: color .2s linear;
+
+    &:hover {
+        color: darken($link, 25%);
+    }
+}
+
+.column:last-child {
+    margin-left: 5rem;
+}
+
+.rule {
+    margin-bottom: 7rem;
+    padding: 0;
+    text-align: left;
+    @include font (1.4rem, 400, $placeholder, 150%);
+
+    & li {
+        list-style: none;
+
+        &::before {
+            content: '\2022';
+            margin-right: 5px;
+            color: $placeholder;
+        }
+    }
+
+    & span {
+        font-weight: 600;
+    }
+}

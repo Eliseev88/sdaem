@@ -1,0 +1,46 @@
+@import 'app/styles/vars';
+
+.wrapper {
+    max-width: 306px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.icon {
+    @include font (17.5px, 500, $placeholder, 1.7rem);
+    position: absolute;
+    top: 15px;
+    left: 21px;
+}
+
+.sign {
+    @include font (17.5px, 500, $error, 1.7rem);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.input {
+    width: 100%;
+    padding: 1.6rem 5.5rem 1.6rem 5.5rem;
+    border: none;
+    background: $input-bg;
+    border-radius: 30px;
+    @include font (1.4rem, 500, $main, 1.7rem);
+
+    &::placeholder {
+        @include font (1.4rem, 500, $placeholder, 1.7rem);
+    }
+
+    &:focus {
+        outline: 2px solid rgba(78, 100, 249, 0.8);
+
+        &::placeholder {
+            color: $link;
+        }
+    }
+
+    &:focus + .icon {
+        color: $link;
+    }
+}

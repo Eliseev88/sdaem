@@ -1,0 +1,32 @@
+@import 'app/styles/vars';
+
+.appleSwitch {
+    position: relative;
+    appearance: none; outline: none;
+    width: 34px; height: 20px;
+    background-color: $light-gray; 
+    border-radius: 100px; 
+    box-shadow: inset -20px 0 0 0 $light-gray;
+    cursor: pointer;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%; 
+        left: 3px;
+        transform: translateY(-50%);
+        width: 14px; height: 14px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    &:checked {
+        border-color: $link;
+        box-shadow: inset 34px 0 0 0 $link;
+    }
+
+    &:checked:after {
+        left: 16px;
+    }
+}

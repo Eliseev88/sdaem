@@ -1,0 +1,26 @@
+/* COLORS */
+$link: #664EF9;
+$main: #1E2123;
+$non-active-link: #8291A3;
+$gold: #FEC100;
+$white: #FFF;
+$placeholder: #686868;
+$light-gray: #BDBDBD;
+$input-bg: #F7F7F7;
+$error: #EB5757;
+
+/* FONTS */
+@mixin font ($fontSize, $fontWeight, $color, $lineHeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $color;
+    line-height: $lineHeight;
+}
+
+/* Media queries */
+$mobile-xs: "(max-width: 320px)";
+$mobile-sm: "(max-width: 565px)";
+$mobile: "(max-width: 768px)";
+$tablet: "(max-width: 991px)";
+$laptop: "(max-width: 1199px)";
+$screen-l: "(max-width: 1906px)";

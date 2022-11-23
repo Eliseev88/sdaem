@@ -1,0 +1,35 @@
+@import 'app/styles/vars';
+
+.form {
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.row {
+    margin-bottom: 3.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    @include font (1.4rem, 400, $placeholder, 2rem);
+    cursor: pointer;
+
+    & span {
+        margin-left: 8px;
+    }
+}
+
+.recovery {
+    @include font (1.4rem, 500, $link, 2rem);
+    transition: color .2s linear;
+
+    &:hover {
+        color: darken($link, 25%);
+    }
+}
