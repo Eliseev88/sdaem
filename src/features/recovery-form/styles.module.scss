@@ -1,0 +1,19 @@
+@import 'app/styles/vars';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 2rem;
+    text-align: center;
+    @include font (2.5rem, 700, $main, 3rem);
+}
+
+.content {
+    margin-bottom: 2.2rem;
+    text-align: center;
+    @include font (1.4rem, 400, $placeholder, 1.7rem);
+}

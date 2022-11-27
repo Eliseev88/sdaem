@@ -1,18 +1,42 @@
-import { userModel } from 'entities/user';
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 import cl from './styles.module.scss';
-import { fetchUser } from 'entities/user/model/reducer/ActionCreators';
+import { getUserEmailNotification } from 'entities/user/model/reducer/Selectors';
+import SuccessRegister from './components/success-register';
+import PopUp from 'shared/ui/popup';
+import { userSlice } from 'entities/user/model';
+import { useLocation } from 'react-router-dom';
+import RecoveryForm from 'features/recovery-form';
+import Intro from './components/intro';
 
 export const MainPage: FC = () => {
+  const [recoveryPass, setRecoveryPass] = useState<boolean>(false);
+
+  const userEmailNotification = useAppSelector(getUserEmailNotification);
   const dispatch = useAppDispatch();
-  const user = useAppSelector(state => state.userReducer.user);
+
+  const location = useLocation();
 
   useEffect(() => {
-    dispatch(fetchUser());
-  }, []);
+    if (location.pathname === '/recovery') {
+      setRecoveryPass(true);
+    }
+  }, [location.pathname]);
+
+  const handleClick = () => {
+    dispatch(userSlice.actions.userEmailNotification(false));
+  };
+
   return (
-    <div className={cl.test}>{user.name}</div>
+    <main className={cl.test}>
+      <Intro />
+      {userEmailNotification && <PopUp visible={userEmailNotification} setVisible={handleClick}>
+        <SuccessRegister handleClick={handleClick} />
+      </PopUp>}
+      {recoveryPass && <PopUp visible={recoveryPass} setVisible={setRecoveryPass}>
+        <RecoveryForm setIsVisible={setRecoveryPass} />
+      </PopUp>}
+    </main>
   );
 };
 

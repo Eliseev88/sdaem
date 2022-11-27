@@ -1,10 +1,4 @@
 import { initializeApp } from 'firebase/app';
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  getAuth
-} from 'firebase/auth';
 import { getDatabase, ref } from 'firebase/database';
 
 // Your web app's Firebase configuration
@@ -18,20 +12,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
-// export const db = getDatabase(app);
-
-export const signUp = async (email, pass) => {
-  await createUserWithEmailAndPassword(auth, email, pass);
-};
-export const logIn = async (email, pass) => {
-  await signInWithEmailAndPassword(auth, email, pass);
-};
-export const logOut = async () => {
-  await signOut(auth);
-};
+export const db = getDatabase(app);
 
 // export const userRef = ref(db, 'user');
 // export const userNameRef = ref(db, 'user/name');
@@ -42,3 +25,5 @@ export const logOut = async () => {
 // export const getMsgsRefById = (chatId) => ref(db, `messages/${chatId}`);
 // export const getMsgsListRefById = (chatId) =>
 //   ref(db, `messages/${chatId}/messageList`);
+
+export default app;

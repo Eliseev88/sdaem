@@ -82,3 +82,8 @@
         color: darken($link, 20%);
     }
 }
+
+.userName {
+    margin-right: 10px;
+    @include font (1.4rem, 500, $gold, 1.7rem);
+}

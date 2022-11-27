@@ -15,7 +15,7 @@ export const LoginModal: FC<ILoginModal> = ({ isPopUpVisible, setIsPopUpVisible 
       <div className={cl.auth}>
         <h1 className={cl.title}>Авторизация</h1>
         <p className={cl.text}>Авторизируйтесь, чтобы начать публиковать свои объявления</p>
-        <AuthForm isPopUpVisible={isPopUpVisible} />
+        <AuthForm isPopUpVisible={isPopUpVisible} setIsPopUpVisible={setIsPopUpVisible} />
         <div className={cl.box}>
           <span>Еще нет аккаунта? </span>
           <Link to='/signup' className={cl.change}>Создайте аккаунт</Link>

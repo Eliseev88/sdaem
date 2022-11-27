@@ -1,0 +1,18 @@
+@import 'app/styles/vars';
+
+.intro {
+    padding: 8.25rem 11.2rem 11.8rem;
+    background: url('../images/bg_map.png'), linear-gradient(360deg, #7E6AF3 15.95%, #6540CD 63.1%);
+    backdrop-filter: blur(2px);
+    border-radius: 0px 0px 40px 40px;
+}
+
+.title {
+    margin-bottom: 5.5rem;
+    text-align: center;
+    @include font (3rem, 700, #fff, 3.6rem);
+
+    & span {
+        color: $gold;
+    }
+}

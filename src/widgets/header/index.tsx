@@ -5,7 +5,11 @@ import { useLocation } from 'react-router-dom';
 import RegisterModal from './components/register-modal';
 import LoginModal from './components/login-modal';
 
-export const Header: FC = () => {
+interface IHeader {
+  authed: boolean
+}
+
+export const Header: FC<IHeader> = ({ authed }) => {
   const [isPopUpVisible, setIsPopUpVisible] = useState<boolean>(false);
   const location = useLocation();
   const [currentRoute, setCurrentRoute] = useState<string>(location.pathname);
@@ -23,11 +27,11 @@ export const Header: FC = () => {
 
   return (
     <header>
-      <SupMenu setAuthFormVisible={setIsPopUpVisible} />
+      <SupMenu setAuthFormVisible={setIsPopUpVisible} authed={authed} />
       <SubMenu />
-      {currentRoute === '/signup'
+      {currentRoute === '/signup' && !authed
         ? <RegisterModal isPopUpVisible={isPopUpVisible} setIsPopUpVisible={setIsPopUpVisible} />
-        : <LoginModal isPopUpVisible={isPopUpVisible} setIsPopUpVisible={setIsPopUpVisible} />
+        : !authed ? <LoginModal isPopUpVisible={isPopUpVisible} setIsPopUpVisible={setIsPopUpVisible} /> : ''
       }
     </header >
   );

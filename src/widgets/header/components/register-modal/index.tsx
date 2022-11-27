@@ -1,5 +1,5 @@
 import PopUp from 'shared/ui/popup';
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import cl from './styles.module.scss';
 import { Link } from 'react-router-dom';
 import RegisterForm from 'features/register-form';

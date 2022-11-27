@@ -3,14 +3,25 @@ import { NavLink } from 'react-router-dom';
 import cl from './styles.module.scss';
 import { FaMapMarkerAlt as Map } from 'react-icons/fa';
 import { AiOutlineHeart as Heart } from 'react-icons/ai';
+import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import { getUser } from 'entities/user/model/reducer/Selectors';
+import { logOut } from 'entities/user/model/reducer/ActionCreators';
 
 interface SubMenuProps {
   setAuthFormVisible: (val: boolean) => void
+  authed: boolean
 }
 
-export const SupMenu: FC<SubMenuProps> = ({ setAuthFormVisible }) => {
+export const SupMenu: FC<SubMenuProps> = ({ setAuthFormVisible, authed }) => {
   const checkActiveLink = ({ isActive }: { isActive: boolean }): string => {
     return isActive ? `${cl.link} ${cl.active}` : cl.link;
+  };
+
+  const dispatch = useAppDispatch();
+  const user = useAppSelector(getUser);
+
+  const handleLogOut = () => {
+    dispatch(logOut());
   };
 
   return (
@@ -44,9 +55,15 @@ export const SupMenu: FC<SubMenuProps> = ({ setAuthFormVisible }) => {
                 <Heart className={cl.heart} />
               </div>
             </NavLink>
-            <button className={cl.btn} onClick={() => setAuthFormVisible(true)}>
-              Вход и регистрация
-            </button>
+            {authed
+              ? <div>
+                <span className={cl.userName}>{user.email}</span>
+                <button className={cl.btn} onClick={handleLogOut}>Выйти</button>
+              </div>
+              : <button className={cl.btn} onClick={() => setAuthFormVisible(true)}>
+                Вход и регистрация
+              </button>
+            }
           </div>
         </nav>
       </div>

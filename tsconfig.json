@@ -10,13 +10,13 @@
     "moduleResolution": "node",
     "baseUrl": "src",
     "paths": {
-      "@/*": ["*"],
       "app/*": ["app/*"],
       "shared/*": ["shared/*"],
       "pages/*": ["pages/*"],
       "entities/*": ["entities/*"],
       "features/*": ["features/*"],
-      "widgets/*": ["widgets/*"]
+      "widgets/*": ["widgets/*"],
+      "@/*": ["*"]
      },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
