@@ -52,7 +52,7 @@ export const AuthForm: FC<IAuthFormProps> = ({ isPopUpVisible, setIsPopUpVisible
   }, [isPopUpVisible]);
 
   useEffect(() => {
-    error === 'Firebase: Error (auth/wrong-password).' ? setErrorAuth(true) : setErrorAuth(false);
+    error ? setErrorAuth(true) : setErrorAuth(false);
   }, [error]);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes, LegacyRef, ReactNode } from 'react';
+import React, { FC, forwardRef, InputHTMLAttributes, LegacyRef, ReactNode } from 'react';
 import { ImNotification as Sign } from 'react-icons/im';
 import cl from './styles.module.scss';
 
@@ -8,7 +8,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   ref?: LegacyRef<HTMLInputElement>
 };
 
-const Input: FC<InputProps> = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   return (
     <div className={cl.wrapper}>
       <input ref={ref} className={cl.input} {...props} style={{ border: props.error ? '1px solid #EB5757' : 'none' }} />
