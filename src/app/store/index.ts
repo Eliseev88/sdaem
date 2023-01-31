@@ -1,8 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { propertyMiddlewares, propertyReducers } from 'entities/property';
 import userReducer from 'entities/user/model/reducer/UserSlice';
+import filterReducer from 'entities/filter/model/reducer/FilterSlice';
+import { sidebarApi } from 'entities/sidebar/model';
 
 const rootReducer = combineReducers({
-  userReducer
+  userReducer,
+  filterReducer,
+  [sidebarApi.reducerPath]: sidebarApi.reducer,
+  ...propertyReducers
 });
 
 export const setupStore = () => {
@@ -11,7 +17,7 @@ export const setupStore = () => {
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: false
-      })
+      }).concat(sidebarApi.middleware, ...propertyMiddlewares)
   });
 };
 

@@ -2,7 +2,7 @@ import { ChangeEvent, FC, HTMLAttributes } from 'react';
 import cl from './styles.module.scss';
 
 interface ISwitchCheckboxProps extends HTMLAttributes<HTMLInputElement> {
-  ischecked: string | boolean
+  defaultChecked: boolean
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
 };
 

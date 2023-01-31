@@ -1,10 +1,16 @@
 @import 'app/styles/vars';
 
 .intro {
+    max-height: 471.4px;
     padding: 8.25rem 11.2rem 11.8rem;
     background: url('../images/bg_map.png'), linear-gradient(360deg, #7E6AF3 15.95%, #6540CD 63.1%);
     backdrop-filter: blur(2px);
     border-radius: 0px 0px 40px 40px;
+    transition: max-height .2s linear;
+
+    &.filterOpen {
+        max-height: 1000px;
+    }
 }
 
 .title {
@@ -14,5 +20,40 @@
 
     & span {
         color: $gold;
+    }
+}
+
+.list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: fit-content;
+    background: rgba(45, 57, 136, 0.5);
+}
+
+.element {
+    list-style: none;
+
+    & button {
+        padding: 1.3rem 2rem;
+        @include font (1.4rem, 600, #fff, 1.7rem);
+        cursor: pointer;
+        transition: all .2s linear;
+
+        &:hover {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: #fff;
+            color: $link;
+        }
+
+        &.active {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: #fff;
+            color: $link;
+        }
     }
 }

@@ -84,7 +84,7 @@ export const AuthForm: FC<IAuthFormProps> = ({ isPopUpVisible, setIsPopUpVisible
       />
       <div className={cl.row}>
         <label className={cl.label}>
-          <SwitchCheckbox ischecked={rememberMe.toString()} onChange={handleChangeRemember} />
+          <SwitchCheckbox defaultChecked={rememberMe} onChange={handleChangeRemember} />
           <span>Запомнить меня</span>
         </label>
         <Link to='/recovery' className={cl.recovery}>Забыли пароль?</Link>

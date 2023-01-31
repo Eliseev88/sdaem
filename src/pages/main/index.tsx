@@ -8,6 +8,7 @@ import { userSlice } from 'entities/user/model';
 import { useLocation } from 'react-router-dom';
 import RecoveryForm from 'features/recovery-form';
 import Intro from './components/intro';
+import Gallery from './components/gallery';
 
 export const MainPage: FC = () => {
   const [recoveryPass, setRecoveryPass] = useState<boolean>(false);
@@ -28,8 +29,11 @@ export const MainPage: FC = () => {
   };
 
   return (
-    <main className={cl.test}>
+    <main>
       <Intro />
+      <Gallery />
+
+      {/* Modals */}
       {userEmailNotification && <PopUp visible={userEmailNotification} setVisible={handleClick}>
         <SuccessRegister handleClick={handleClick} />
       </PopUp>}

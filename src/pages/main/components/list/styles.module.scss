@@ -1,0 +1,29 @@
+@import 'app/styles/vars';
+
+.list {
+    position: relative;
+}
+
+.element {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.link {
+    @include font (14px, 400, $gold, 17px);
+    cursor: default;
+    transition: transform .2s linear;
+
+    &:hover {
+        transform: translateX(5px);
+    }
+}
+
+.amount {
+    @include font (14px, 400, $light-gray, 17px);
+}

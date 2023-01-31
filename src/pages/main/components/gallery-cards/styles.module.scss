@@ -1,0 +1,120 @@
+@import 'app/styles/vars';
+
+.gallery {
+    max-width: 953px;
+    width: 100%;
+    margin-right: 30px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 3rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.flat,
+.auto,
+.house,
+.sauna {
+    height: 270px;
+    padding: 3.8rem 8.5rem 1.9rem 3.7rem;
+    border-radius: 10px;
+    background: no-repeat center/cover linear-gradient(to right, rgba(30, 33, 35, .4), rgba(30, 33, 35, .4));
+    position: relative;
+}
+
+.flat,
+.sauna {
+    margin-right: 3rem;
+}
+
+.flat,
+.auto {
+    max-width: 516px;
+    width: 56%;
+}
+
+.house,
+.sauna {
+    max-width: 407px;
+    width: 44%;
+}
+
+.flat {
+    background-image: url('../images/flat.png');
+}
+
+.house {
+    background-image: url('../images/mansion.jpg');
+}
+
+.sauna {
+    background-image: url('../images/sauna.jpg');
+}
+
+.auto {
+    background-image: url('../images/car.jpg');
+}
+
+.suptitle {
+    @include font (13px, 700, inherit, 16px);
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.title {
+    margin-top: 1.8rem;
+    @include font (2.5rem, 700, #fff, 3rem);
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.box {
+    margin-top: 2.2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.element {
+    margin-right: 16px;
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    border-radius: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: $link;
+    transition: all .2s linear;
+    cursor: pointer;
+
+    &:hover {
+        color: white;
+        background-color: darken($link, 15%);
+    }
+}
+
+.link {
+    width: 4.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 21px;
+    bottom: 23px;
+
+    &:hover .btn {
+        transform: translateX(5px);
+    }
+}
+
+.btn {
+    width: 4rem;
+    height: 4rem;
+    color: #fff;
+    opacity: .7;
+    transition: transform .2s linear;
+}

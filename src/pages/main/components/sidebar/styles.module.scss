@@ -1,0 +1,51 @@
+@import 'app/styles/vars';
+
+.sidebar {
+    max-width: 317px;
+    width: 100%;
+    height: 570px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        visibility: hidden;
+    }
+}
+
+.block {
+    margin-top: 4rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.title {
+    margin-bottom: 1.5rem;
+    @include font (1.8rem, 700, $main, 2.2rem);
+}
+
+.btn {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2px;
+    border-bottom: 1px solid $gold;
+    cursor: pointer;
+    @include font (14px, 400, $gold, 17px);
+}
+
+.link {
+    display: block;
+    margin-bottom: 10px;
+    @include font (14px, 400, $gold, 17px);
+    cursor: default;
+    transition: transform .2s linear;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        transform: translateX(5px);
+    }
+}

@@ -6,6 +6,7 @@ import { auth } from 'entities/user/model/firebase';
 import PublicRoute from './PublicRoute';
 import { useAppDispatch } from 'shared/hooks';
 import { userSlice } from 'entities/user/model';
+import CatalogPage from './catalog';
 
 const MainPage = lazy(async () => await import('./main'));
 
@@ -41,6 +42,7 @@ export const Routing: FC = () => {
         <Route path="/recovery" element={<PublicRoute authed={authed} />}>
           <Route path='' element={<MainPage />} />
         </Route>
+        <Route path='/catalog' element={<CatalogPage />} />
       </Routes>
     </>
   );

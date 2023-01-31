@@ -1,0 +1,89 @@
+@import 'app/styles/vars';
+
+.filter {
+    display: flex;
+    padding: 1.6rem 0;
+    background-color: #fff;
+
+    &.active {
+        border-bottom: 1px solid rgba(78, 100, 249, 0.1);
+        border-radius: 0;
+    }
+
+    &.nonActive {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transition: border-radius 0s linear .26s;
+    }
+}
+
+.column {
+    padding: 0 2rem;
+    border-right: 1px solid rgba(102, 78, 249, 0.1);
+
+    &:nth-last-of-type(-n+2) {
+        border-right: none;
+    }
+}
+
+.title {
+    margin-bottom: 1.1rem;
+    @include font (1.4rem, 500, $light-gray, 1.7rem);
+}
+
+.price {
+    display: flex;
+    align-items: center;
+
+    & span {
+        margin: 0 5px;
+        @include font (1.4rem, 500, $link, 100%);
+    }
+}
+
+.input {
+    max-width: 8rem;
+    padding: 1rem 1.5rem;
+    background: #F8F8F8;
+    border-radius: 20px;
+    transition: box-shadow .2s linear;
+    border: none;
+    @include font (1.4rem, 500, $placeholder, 1.7rem);
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &:hover {
+        box-shadow: 0px 5px 15px rgba(0, 96, 206, 0.15);
+    }
+
+    &:focus {
+        outline: 2px solid rgba(102, 78, 249, 0.8);
+        background: #FFF;
+    }
+}
+
+.more {
+    display: flex;
+    align-items: center;
+    @include font (1.4rem, 500, $main, 1.7rem);
+    cursor: pointer;
+    transition: text-decoration .2s linear;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.equalizer {
+    color: $link;
+    margin-left: 5px;
+    font-size: 2rem;
+}
+
+.shevron {
+    margin-left: 1.2rem;
+}
